@@ -25,4 +25,5 @@ ares-rs: guix
 tux/system/init: guix
 	RDE_TARGET=tux-system \
 	INTEGRATE_HE=1 \
-	${GUIX} system init ${CONFIGS} ${ROOT_MOUNT_POINT}
+	${GUIX} system --substitute-urls="${SUBSTITUTE_URLS}" \
+	init ${CONFIGS} ${ROOT_MOUNT_POINT}

@@ -37,7 +37,7 @@
    (list
     (file-system
      (type "vfat")
-     (device (file-system-label "ROOT"))
+     (device (file-system-label "ESP"))
      (mount-point "/boot/efi")))))
 
 (define-public %tux-features
