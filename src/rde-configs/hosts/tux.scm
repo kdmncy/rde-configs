@@ -42,6 +42,10 @@
 
 (define-public %tux-features
   (list
+   (feature-kernel
+    #:kernel linux-lts
+    #:initrd microcode-initrd
+    #:firmware (list linux-firmware))
    (feature-host-info
     #:host-name "tux"
     ;; ls `guix build tzdata`/share/zoneinfo
