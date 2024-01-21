@@ -11,7 +11,6 @@
   #:use-module (guix inferior)
   #:use-module (guix packages)
   #:use-module (rde features base)
-  #:use-module (rde features clojure)
   #:use-module (rde features emacs-xyz)
   #:use-module (rde features gnupg)
   #:use-module (rde features irc)
@@ -23,7 +22,6 @@
   #:use-module (rde features system)
   #:use-module (rde features xdg)
   #:use-module (rde features markup)
-  #:use-module (rde features containers)
   #:use-module (rde features virtualization)
   #:use-module (rde features presets)
   #:use-module (rde features version-control)
@@ -177,7 +175,7 @@
     (feature-base-services
      #:default-substitute-urls (list "https://bordeaux.guix.gnu.org")
      #:guix-substitute-urls (list "https://substitutes.nonguix.org")
-     #:guix-authorization-keys (list nonguix-key)))))
+     #:guix-authorized-keys (list nonguix-key)))))
 
 (define-public %dmncy-features
   (append
@@ -186,7 +184,7 @@
     (feature-additional-services)
     (feature-user-info
      #:user-name "dmncy"
-     #:user-name "Dmitry Klementiev"
+     #:full-name "Dmitry Klementiev"
      #:email "kdmncy@gmail.com"
      #:user-initial-password-hash
      "$6$abc$AW6FKPI/QLxLya0GEsTxE8OdJwOVlvlqVp0IMGFZ9hl2vu90WUgahJg80fBJ7GBPgKSDKHEFO1YoqxoFg4Lk.."
@@ -201,6 +199,12 @@
      #:mail-accounts (list
                       (mail-acc 'personal "kdmncy@gmail.com"))
      #:mailing-lists '())
+    (feature-irc-settings
+     #:irc-accounts (list
+                     (irc-account
+                      (id 'libera)
+                      (network "irc.libera.chat")
+                      (nick "dmncy"))))
     (feature-xdg)
     (feature-emacs-keycast #:turn-on? #t)
     (feature-emacs-time)
