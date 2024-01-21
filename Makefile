@@ -2,6 +2,7 @@ include profiles.mk
 
 # By default substitute urls specified only for Profiles and Initialization
 SUBSTITUTE_URLS=https://bordeaux.guix.gnu.org \
+https://ci.guix.trop.in \
 https://substitutes.nonguix.org
 
 GUIX_PROFILE=target/profiles/guix

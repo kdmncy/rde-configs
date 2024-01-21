@@ -174,7 +174,8 @@
     (feature-git #:sign-commits? #f)
     (feature-base-services
      #:default-substitute-urls (list "https://bordeaux.guix.gnu.org")
-     #:guix-substitute-urls (list "https://substitutes.nonguix.org")
+     #:guix-substitute-urls (list "https://substitutes.nonguix.org"
+                                  "https://ci.guix.trop.in")
      #:guix-authorized-keys (list nonguix-key)))))
 
 (define-public %dmncy-features
